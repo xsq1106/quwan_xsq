@@ -1,0 +1,142 @@
+*{margin:0;padding: 0}
+/* 头部 */
+header{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    box-shadow: 1px 1px 5px rgba(98,105,109,0.5);
+}
+.head-con{
+    width: 980px;
+    height: 60px;
+    color: #333;
+    padding: 20px 0;
+    /* background: darkorchid; */
+    margin: 0 auto;
+}
+.headPfont{
+    height: 22px;
+    line-height: 20px;
+    margin-top: 36px;
+    text-align: right;
+    display: inline-block;
+    float: right;
+}
+.registerBtn{
+    width: 49px;
+    height: 22px;
+    background: #b4a078;
+    border-radius: 2px;
+    color: #fff;
+    margin-left: 6px;
+    display: inline;
+    text-decoration: none;
+    padding: 2px 8px;
+}
+
+/* 登录主体 */
+#registerBody{
+    width: 100%;
+    height: auto;;
+    background: #CCCCCC;
+    overflow: hidden;
+    padding: 50px 0;
+}
+.registerBox{
+    width: 980px;
+    height: auto;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 1px 1px 5px rgba(98,105,109,0.5);
+    margin: 0 auto;
+    overflow: hidden;
+}
+.registerTit{
+    width: 980px;
+    text-align: center;
+    font-size: 18px;
+    overflow: hidden;
+}
+.registerTit li{
+    list-style: none;
+    float: left;
+    height: 56px;
+    line-height: 56px;
+    border-bottom: 1px solid #b4a078;
+    color: #b4a078;
+}
+.registerTit_left{
+    border-right: 1px dashed #ddd;
+    width:100%;
+    cursor: pointer;
+}
+.registerIpt{
+    padding: 40px 0;
+    position: relative;
+}
+#idName,#password,#email,#confirmPwd{
+    border: 1px solid #ccc;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 6px;
+    margin-left: 310px;
+    cursor: text;
+    zoom: 1;
+    width: 350px;
+    outline: none;
+}
+#idName{
+}
+#password,#email,#confirmPwd{
+    margin-top: 30px;
+}
+#checkBox{
+    margin-top: 20px;
+    display: inline;
+    overflow: hidden;
+    margin-left: 310px;
+    font-size: 14px;
+}
+#baocun{
+    font-size: 14px;
+}
+#baocun a{
+    text-decoration: none;
+    color: blue;
+}
+#submit{
+    width: 364px;
+    padding: 15px 0;
+    height: 48px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1px solid #b4a078;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #b4a078;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-left: 310px;
+    margin-top: 20px;
+}
+.disanfang{
+    margin-left: 310px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+.disanfang li{
+    list-style: none;
+    display: inline-block;
+    margin-top: 20px;margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.disanfang li img{
+    width: 100%;
+    height: 100%;
+}

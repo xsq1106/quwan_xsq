@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <header>
+        <div class="head-con">
+            <img src="images/logo.gif" alt="">
+            <p class="headPfont">如未登录，点击<a href="register.html" class="registerBtn">注册</a> </p>
+        </div>
+    </header>
+    <div id="loginBody">
+        <div class="loginBox">
+            <ul class="loginTit">
+                <li class="loginTit_left">会员登陆</li>
+                <li class="loginTit_right">手机动态密码登录</li>
+            </ul>
+            <div class="loginIpt">
+                <form action="">
+                    <input type="text" name="" id="idName" placeholder="用户名、手机、邮箱">
+                    <input type="password" id="password" placeholder="密码">
+                   <br>
+                    
+                    <label for="checkBox"><input type="checkbox" id="checkBox"> 
+                        <span id="baocun"> 请保存我这次的登录信息。</span>
+                    </label>
+                    <span class="wangjimima">忘记密码?</span>
+                    <input type="submit" value="登录" id="submit">
+                </form>
+                <div class="disanfang">
+                <p >使用第三方软件账号登录</p>
+                    <li><img src="images/qq.png" alt=""></li>
+                    <li><img src="images/zfb (1).png" alt=""></li>
+                    <li><img src="images/wx.png" alt=""></li>
+                    <li><img src="images/wb.png" alt=""></li>
+            </div>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery.min.js"></script>    
+<script src="js/cookie.js"></script>
+<script>
+     let check = document.getElementById("checkBox")
+        $("#submit").click(function () {
+            // 三十天免登录
+            if (check.checked) {
+                cookie.set("name",$("#idName").val(), 30);
+                cookie.set("pwd",$("#password").val(), 30)
+            }
+            let http=new XMLHttpRequest
+            http.open("get",`http://192.168.31.110:8080/login?username=${$("#idName").val()}&password=${$("#password").val()}`)
+            http.send()
+            http.onreadystatechange=function(){
+                if(http.readyState===4){
+                     if(http.responseText==="success"){
+                        sessionStorage.setItem("isLogin","true")
+                        alert("登陆成功")
+                        location.href="http://192.168.31.110/%E8%B6%A3%E7%8E%A9%E7%BD%91/index.html"
+                    }
+                    else{
+                        alert("用户名或密码错误")
+                    }
+                }
+            }
+        })
+        
+      
+        if(cookie.get("name")&&cookie.get("pwd")){
+                $("#idName").val(cookie.get("name"))
+                $("#password").val(cookie.get("pwd"))
+                check.checked=true
+            }
+</script>
+</body>
+</html>

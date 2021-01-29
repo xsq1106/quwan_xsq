@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <header>
+        <div class="head-con">
+            <img src="images/logo.gif" alt="">
+            <p class="headPfont">如未登录，点击
+                <a href="login.html" class="registerBtn">登录</a>
+            </p>
+        </div>
+    </header>
+    <div id="registerBody">
+        <div class="registerBox">
+            <ul class="registerTit">
+                <li class="registerTit_left">新用户注册</li>
+            </ul>
+            <div class="registerIpt">
+                <form action="">
+                    <input type="text" name="" id="idName" placeholder="用户名">
+                    <input type="text" name="" id="email" placeholder="email">
+                    <input type="password" id="password" placeholder="密码">
+                    <input type="password" placeholder="确认密码" id="confirmPwd">
+                    <br>
+
+                    <label for="checkBox">
+                        <input type="checkbox" id="checkBox" checked>
+                        <span id="baocun"> 我已看过并接受《
+                            <a href=""> 用户协议</a>》
+                        </span>
+                    </label>
+                    <input type="submit" value="同意协议并注册" id="submit">
+                </form>
+                <div class="disanfang">
+                    <p>使用第三方软件账号登录</p>
+                    <li>
+                        <img src="images/qq.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/zfb (1).png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/wx.png" alt="">
+                    </li>
+                    <li>
+                        <img src="images/wb.png" alt="">
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        let user = $("#idName")
+        user.click(function () {
+            user[0].onblur = function () {
+                if (user.val() === "") {
+                    $("span").remove()
+                    let newspan = $(`<span style="color:red;font-size:12px"> &nbsp;&nbsp;用户名不能为空</span>`)
+                    user.after(newspan)
+                }
+            }
+            $("span").remove()
+        })
+        let email = $("#email")
+        email.keyup(function () {
+            if (/^([A-z]|\d)+\@([A-z]|\d)+\.([A-z]{2,})$/.test(email.val())) {
+                $("span").remove()
+            }
+            else {
+                $("span").remove()
+                let newspan = $(`<span style="color:red;font-size:12px"> &nbsp;&nbsp;邮箱格式为:xxxxxxxx@xx.xx</span>`)
+                email.after(newspan)
+            }
+        })
+
+        let pwd = $("#password")
+        pwd.click(function () {
+            pwd.focus()
+            pwd[0].onblur = function () {
+                if (pwd.val() === "") {
+                    $("span").remove()
+                    let newspan = $(`<span style="color:red;font-size:12px"> &nbsp;&nbsp;密码不能为空</span>`)
+                    pwd.after(newspan)
+                }
+            }
+            $("span").remove()
+        })
+        pwd.keyup(function () {
+            $("span").remove()
+            if (pwd.val().length < 6) {
+                let newspan = $(`<span style="color:red;font-size:12px"> &nbsp;&nbsp;密码不能小于6位</span>`)
+                pwd.after(newspan)
+            }
+        })
+        let pwd2 = $("#confirmPwd")
+        pwd2.keyup(function () {
+            $("span").remove()
+            if (pwd.val() !== pwd2.val()) {
+                // $("span").remove()
+                let newspan = $(`<span style="color:red;font-size:12px"> &nbsp;&nbsp;密码确认不一致</span>`)
+                pwd2.after(newspan)
+            }
+        })
+        $("#submit").click(function () {
+            if (user.next("span").length === 0 && pwd.next("span").length === 0 && pwd2.next("span").length === 0 && user.val() && pwd.val() && pwd2.val()) {
+                let http = new XMLHttpRequest
+                http.open("get", `http://192.168.31.110:8080/addUser?username=${$("#idName").val()}&password=${$("#password").val()}&email=${$("#email").val()}`)
+                http.send()
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4) {
+                        console.log(http.responseText)
+                        if (http.responseText === "success") {
+                            alert("注册成功，跳转至登录界面！")
+                            location.href = "http://192.168.31.110/%E8%B6%A3%E7%8E%A9%E7%BD%91/login.html"
+                        }
+                        else if (http.responseText === "chongfu") {
+                            alert("用户名已存在")
+                        }
+                        else {
+                            alert("注册失败")
+                        }
+                    }
+                }
+            }
+            else {
+                alert("注册失败请检查用户名或密码填写规范！")
+            }
+        })
+    </script>
+</body>
+
+</html>

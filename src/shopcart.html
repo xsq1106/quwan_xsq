@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/shopcart.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        #temp {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="headTop-con">
+            <div class="headtop_left">
+                <a href="index.html">首页</a>
+                <a href="login.html">登录</a>
+                <a href="register.html">注册</a>
+            </div>
+            <div class="headtop_right">
+                <li>
+                    <b class="b1">1</b> 我的购物车</li>
+                <li class="stepPic"></li>
+                <li>
+                    <b class="b2">2</b>确认订单信息</li>
+                <li class="stepPic"></li>
+                <li>
+                    <b class="b3">3</b>成功提交订单</li>
+                <div class="sanjiaoxing"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 购物车界面 -->
+    <div id="shopcart">
+        <div class="shopcart-con">
+            <div class="shopcart_btn">
+                <div class="shopcartBtnRight">
+                    <a href="" class="continueBuy">继续购物</a>
+                    <a href="" class="gocart">&nbsp;去结算&nbsp;</a>
+                </div>
+            </div>
+            <div class="cart_box">
+                <div class="cart_box_head">
+                    <span class="allselect">
+                        <input type="checkbox" id="cart_box_check">
+                        <label for="cart_box_check">全选</label>
+                    </span>
+                    <span>单价</span>
+                    <span>数量</span>
+                    <span>小计</span>
+                </div>
+                <div class="cart_template">
+                    <ul>
+                        <li id="temp" class="template">
+                            <div class="list">
+                                <div class="goods_id" style="display: none"></div>
+                                <div class="cart_ipt">
+                                    <input type="checkbox" class="checkBox">
+                                </div>
+                                <div class="cart_pic">
+                                    <img src="images/zhubao.jpg" alt="">
+                                </div>
+                                <div class="cart_info">
+                                    <a href="" class="goods_name">
+                                        HKGOLD香港黄金N19-N20星月同行项链
+                                    </a>
+                                    <br>
+                                    <span class="goods_style">
+                                        颜色:金色[699]
+                                    </span>
+                                </div>
+                                <div class="cart_price">
+                                    <p class="onePrice">￥699.00</p>
+                                </div>
+                                <div class="cart_count">
+                                    <span class="down">-</span>
+                                    <input type="text" value="0" class="count">
+                                    <span class="add">+</span>
+                                </div>
+                                <div class="cart_price">
+                                    <p class="allPrice">￥0</p>
+                                </div>
+                                <div- class="cart_delete">
+                                    <p class="delete">删除</p>
+                            </div>
+                </div>
+                </li>
+                </ul>
+            </div>
+            <div class="cart_foot" style="padding-top: 20px;">
+                <div class="cart_foot_left" style="float: left;">
+                    <p class="clear_cart" style="cursor: pointer;"> 清空购物车</p>
+                    <p class="continue_buy">
+                        <a href="fashion.html" style="color: #000;">继续购物</a>
+                    </p>
+                </div>
+                <div class="cart_foot_right" style="float: right;    margin-top: -11px;">
+                    <p>
+                        <span class="countsAll">0</span>
+                        件商品，总价:
+                        <span class="totalPrice">￥0</span>
+                    </p>
+                    <p class="gocart2">
+                        <a href="">去结算</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div id="contact">
+        <div id="contact-con">
+            <div class="contact_item">
+                <h4>客服电话</h4>
+                <p class="telephone">028-65292690</p>
+                <p class="datetime">9:00-18:00</p>
+                <a href="" class="btn">用户反馈</a>
+                <a href="" class="btn">在线客服</a>
+            </div>
+            <div class="contact_item">
+                <h4>趣玩简介</h4>
+                <p class="desc">趣玩网，成立于2008年11月。国内知名创意生活类用品零售平台及专业的新媒体电商运营服务商。</p>
+            </div>
+            <div class="contact_item">
+                <h4>微信扫一扫关注我们</h4>
+                <img src="images/code.jpg" alt="">
+                <p class="codeFont">优惠减不停</p>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="foot-con">
+            <ul class="promise">
+                <li>
+                    <p> 7天无忧退货</p>
+                </li>
+                <li>
+                    <p> 全场免邮费</p>
+                </li>
+                <li>
+                    <p> 趣玩品质保证</p>
+                </li>
+            </ul>
+            <hr>
+            <div class="foot_font">
+                <div class="foot_nav">
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                </div>
+                <p class="footP">© 2008-2021 趣玩 版权所有，并保留所有权利。 高新区孵化园德商国际B座1004 蜀ICP备14003947号-1</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        let http = new XMLHttpRequest
+        http.open("get", "http://192.168.31.110:8080/getshopcart")
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+                data = JSON.parse(http.responseText)
+                data.forEach(item => {
+                    let newItem = $("#temp").clone(true).attr("id", "")
+                    newItem.find(".cart_pic").find("img").attr("src", "images/zhubao" + item.id + ".jpg")
+                    $(".cart_template ul").append(newItem)
+                    newItem.find(".goods_id").html(item.id)
+                    newItem.find(".goods_name").html(item.name)
+                    newItem.find(".cart_count .count").val(item.counts)
+                    newItem.find(".onePrice").html("￥" + item.price)
+                    newItem.find(".allPrice").html("￥" + item.price * newItem.find(".cart_count .count").val())
+                    newItem.addClass("newli")
+                })
+
+                $("body").click(function (event) {
+                    let _this = event.target
+                    //对符号+添加点击事件
+                    if (_this.className === "add") {
+                        let count = $(_this).closest(".list").find(".count").val()
+                        let allPrice = $(_this).closest(".list").find(".allPrice").html()
+                        //不知道为什么不能保留小数点后面的
+                        let onePrice = parseFloat($(_this).closest(".template").find(".onePrice")[0].innerHTML.replace("￥", ""))
+                        count++
+                        $(_this).closest(".cart_count").find(".count").val(count)
+                        $(_this).closest(".list").find(".allPrice").html("￥" + count * onePrice)
+                        checkBoxHash()
+                    }
+                    //对符号-添加点击事件
+                    if (_this.className === "down") {
+                        let count = $(_this).closest(".cart_count").find(".count").val()
+                        let allPrice = $(_this).closest(".list").find(".allPrice").html()
+                        //不知道为什么不能保留小数点后面的
+                        let onePrice = parseFloat($(_this).closest(".template").find(".onePrice")[0].innerHTML.replace("￥", ""))
+                        if (count <= "1") {
+                            return
+                        }
+                        count--
+                        $(_this).closest(".cart_count").find(".count").val(count)
+                        $(_this).closest(".list").find(".allPrice").html("￥" + count * onePrice)
+                        checkBoxHash()
+                    }
+                    //绑定单机复选框事件
+                    if (_this.className === "checkBox") {
+                        checkBoxHash()
+                        localStorage.setItem("checked", _this.checked)
+                    }
+                    //绑定全选事件
+                    if (_this.id === "cart_box_check") {
+                        $("#cart_box_check")[0].checked = true
+                        $(".checkBox").each(function (index, node) {
+                            $(".checkBox").eq(index)[0].checked = true
+                        })
+                        checkBoxHash()
+                    }
+                    //删除购物车的一条商品
+                    if (_this.className === "delete") {
+                        if (confirm("确定要删除这条商品吗？")) {
+                            $(_this).closest("li").remove()
+                            let goods_id = $(_this).closest(".list").find(".goods_id").html()
+                            //交互
+                            let http = new XMLHttpRequest
+                            http.open("get", `http://192.168.31.110:8080/deleteCart?id=${goods_id}`)
+                            http.send()
+                            http.onreadystatechange = function () {
+                                if (http.readyState === 4) {
+                                    if (http.responseText === "error") {
+                                        console.log("error")
+                                    }
+                                    else {
+                                        console.log("success")
+                                    }
+                                }
+                            }
+                            checkBoxHash() //调用函数，改变当前
+                        }
+                    }
+                })
+
+            }
+        }
+
+        //根据当前页面中的节点计算总价和总件数并更新到页面
+        function checkBoxHash() {
+            let checkList = document.getElementsByClassName("checkBox")
+            let count = 0;
+            let price = 0;
+            for (let i = 0; i < checkList.length; i++) {
+                if (checkList[i].checked) {
+                    count = count + parseFloat($(checkList[i]).closest(".list").find(".count").val())
+                    price = price + parseFloat($(checkList[i]).closest(".list").find(".allPrice")[0].innerHTML.replace("￥", ""))
+                    console.log(price)
+                }
+            }
+            $(".totalPrice")[0].innerHTML = "￥" + price
+            $(".countsAll")[0].innerHTML = count
+        }
+
+
+
+        //清空购物车
+        $(".clear_cart").click(function () {
+            if (confirm("确定要清楚购物车吗？")) {
+                $(".newli").remove()
+                let http = new XMLHttpRequest
+                http.open("get", `http://192.168.31.110:8080/deleteCartAll`)
+                http.send()
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4) {
+                        if (http.responseText === "error") {
+                            console.log("error")
+                        }
+                        else {
+                            console.log("success")
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

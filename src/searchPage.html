@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/searchPage.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        .nosearch {
+            display: block;
+        }
+
+        #temp {
+            display: none;
+        }
+
+        .searchFDJ {
+            cursor: pointer;
+        }
+
+        #tempgoods {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headTop">
+            <div class="headTop-con">
+                <span class="headTopTitle">好的生活，没那么贵</span>
+                <div class="headTopRight">
+                    <a href="login.html" class="login">登录</a>
+                    <a href="register.html" class="register">注册</a>
+                    <a href="">常见问题</a>
+                    <a href="">联系我们</a>
+                    <a href="">关于我们</a>
+                    <a href="">客服服务</a>
+                    <a href="">
+                        <!-- <i class="iconfont icon-shouji"></i> -->
+                        微信关注</a>
+                </div>
+            </div>
+
+        </div>
+        <div id="headMid">
+            <div class="headMid-con">
+                <a href="" class="logo">
+                    <img src="images/logo.gif" alt="">
+                </a>
+                <div class="inputBox">
+                    <input type="text" class="search" placeholder="输入商品关键词搜索">
+                    <div class="searchFDJ">
+                        <i class="iconfont icon-fangdajing
+                        "></i>
+                        </a>
+                    </div>
+                    <div class="searchGWC">
+                        <a href="shopcart.html">
+                            <i class="iconfont icon-gouwuche
+                            "></i>
+                            <i class="jiaobiao">0</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav">
+                    <li class="first">
+                        <a href="index.html"> 首页</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 数码家电</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 居家生活</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 个人护理</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 时尚轻奢</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 网红食品</a>
+                    </li>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 搜索页面 -->
+    <div id="searchPage">
+        <div class="searchPage-con">
+            <p class="lead">首页 &gt;
+                <span class="keyword"></span>
+            </p>
+            <div class="search_body" id="temp">
+                <li class="goos_template" id="tempgoods">
+                    <a href="detilPage.html">
+                    <img src="" alt="">
+                    <div class="tempwenzi">
+                        <span class="goods_price">
+                            wew
+                        </span>
+                        <font class="xiaoliang">
+                            <span class="salecount">0</span>人付款 </font>
+                    </div>
+
+                    <span class="goods_name">zgvzdgz</span>
+                    <div class="goods_mask">
+                        <div class="addcart">加入购物车</div>
+                    </div></a>
+                </li>
+            </div>
+            <div class="nosearch">
+                <div class="nosearch_img">
+                    <img src="images/zhaobudao.jpg" alt="">
+                </div>
+                <span>抱歉！我们努力也没有找到您想要的结果……</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div id="contact-con">
+            <div class="contact_item">
+                <h4>客服电话</h4>
+                <p class="telephone">028-65292690</p>
+                <p class="datetime">9:00-18:00</p>
+                <a href="" class="btn">用户反馈</a>
+                <a href="" class="btn">在线客服</a>
+            </div>
+            <div class="contact_item">
+                <h4>趣玩简介</h4>
+                <p class="desc">趣玩网，成立于2008年11月。国内知名创意生活类用品零售平台及专业的新媒体电商运营服务商。</p>
+            </div>
+            <div class="contact_item">
+                <h4>微信扫一扫关注我们</h4>
+                <img src="images/code.jpg" alt="">
+                <p class="codeFont">优惠减不停</p>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="foot-con">
+            <ul class="promise">
+                <li>
+                    <p> 7天无忧退货</p>
+                </li>
+                <li>
+                    <p> 全场免邮费</p>
+                </li>
+                <li>
+                    <p> 趣玩品质保证</p>
+                </li>
+            </ul>
+            <hr>
+            <div class="foot_font">
+                <div class="foot_nav">
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                </div>
+                <p class="footP">© 2008-2021 趣玩 版权所有，并保留所有权利。 高新区孵化园德商国际B座1004 蜀ICP备14003947号-1</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+         //将缓存的keyword值传给关键词内容中
+         $(".keyword").html(localStorage.getItem("keyword"))
+          //判段关键词是否存在商品
+          let http = new XMLHttpRequest
+                http.open("get", `http://192.168.31.110:8080/hasGoods?keyword=${$(".keyword").html()}`)
+                http.send()
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4) {
+                        if (http.responseText === "error") {
+                            console.log(http.responseText)
+                            //没有搜索到内容y
+                            $(".nosearch").css({ "display": "block" })
+                            $(".search_body").attr("id", "temp")
+                        }
+                        else{
+                            $(".nosearch").css({ "display": "none" })
+                            $(".search_body").attr("id", "")
+                            data = JSON.parse(http.responseText)
+                        data.forEach(item => {
+                            let newItem = $("#tempgoods").clone(true).attr("id","")
+                            newItem.find("img").attr("src","images/zhubao"+item.id+".jpg")
+                            $(".search_body").append(newItem)
+                            newItem.find(".goods_name").html(item.name)   
+                            newItem.find(".goods_price").html("￥"+item.price)
+                            // 给新生成的li做标记，便于消除
+                            newItem.addClass("newli")
+                        })
+                        }
+                    }
+                }
+
+
+
+
+        //--------在本页搜索---------//
+        $(".searchFDJ").click(function () {
+            if ($(".search").val() === "") {
+                alert("请在搜索框输入内容哦~")
+            }
+            else {
+                $(".newli").remove()
+                localStorage.setItem("keyword", $(".search").val())
+                //将缓存的keyword值传给关键词内容中
+                $(".keyword").html(localStorage.getItem("keyword"))
+
+                //判段关键词是否存在商品
+                let http = new XMLHttpRequest
+                http.open("get", `http://192.168.31.110:8080/hasGoods?keyword=${$(".keyword").html()}`)
+                http.send()
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4) {
+                        if (http.responseText === "error") {
+                            console.log(http.responseText)
+                            //没有搜索到内容y
+                            $(".nosearch").css({ "display": "block" })
+                            $(".search_body").attr("id", "temp")
+                        }
+                        else{
+                            $(".nosearch").css({ "display": "none" })
+                            $(".search_body").attr("id", "")
+                            data = JSON.parse(http.responseText)
+                        data.forEach(item => {
+                            let newItem = $("#tempgoods").clone(true).attr("id","")
+                            newItem.find("img").attr("src","images/zhubao"+item.id+".jpg")
+                            $(".search_body").append(newItem)
+                            newItem.find(".goods_name").html(item.name)   
+                            newItem.find(".goods_price").html("￥"+item.price)
+                            // 给新生成的li做标记，便于上面消除
+                            newItem.addClass("newli")
+                        })
+                        }
+                    }
+                }
+            }})
+            $("body").click(function(event){
+            let _this=event.target
+            if(_this.closest(".goos_template")!=null){
+                let nowli=_this.closest(".goos_template")
+                localStorage.setItem("goodsname",$(nowli).find(".goods_name").html())
+                localStorage.setItem("price",$(nowli).find(".goods_price").html())
+                localStorage.setItem("bigImg",$(nowli).find("img").attr("src"))
+            }
+            
+        })
+
+    </script>
+
+</body>
+
+</html>

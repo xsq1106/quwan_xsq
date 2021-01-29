@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/detilPage.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        .morebigPic {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            position: absolute;
+            top: 0px;
+            right: -306px;
+            z-index: 8;
+            display: none;
+        }
+
+        .moreImg {
+            width: 1500px;
+            height: 1500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .detil_top_slide {
+            position: relative;
+        }
+
+        #gray {
+            width: 100px;
+            height: 100px;
+            background: #666;
+            opacity: .5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headTop">
+            <div class="headTop-con">
+                <span class="headTopTitle">好的生活，没那么贵</span>
+                <div class="headTopRight">
+                    <a href="login.html" class="login">登录</a>
+                    <a href="register.html" class="register">注册</a>
+                    <a href="">常见问题</a>
+                    <a href="">联系我们</a>
+                    <a href="">关于我们</a>
+                    <a href="">客服服务</a>
+                    <a href="">
+                        <!-- <i class="iconfont icon-shouji"></i> -->
+                        微信关注</a>
+                </div>
+            </div>
+
+        </div>
+        <div id="headMid">
+            <div class="headMid-con">
+                <a href="" class="logo">
+                    <img src="images/logo.gif" alt="">
+                </a>
+                <div class="inputBox">
+                    <input type="text" class="search" placeholder="输入商品关键词搜索">
+                    <div class="searchFDJ">
+                        <a href="">
+                            <i class="iconfont icon-fangdajing
+                            "></i>
+                        </a>
+                    </div>
+                    <div class="searchGWC">
+                        <a href="shopcart.html">
+                            <i class="iconfont icon-gouwuche
+                                "></i>
+                            <i class="jiaobiao">0</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav">
+                    <li class="first">
+                        <a href="index.html"> 首页</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 数码家电</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 居家生活</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 个人护理</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 时尚轻奢</a>
+                    </li>
+                    <li>
+                        <a href="fashion.html"> 网红食品</a>
+                    </li>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- 商品详情页 -->
+    <div id="detilPage">
+        <div class="detilPage-con">
+            <p class="lead">首页 &gt;时尚轻奢 &gt; HKGOLD香港黄金 &gt;
+                <span class="lead_goosname"> </span>
+            </p>
+            <div class="detilcon">
+                <div class="detilcon_content">
+                    <div class="detil_top">
+                        <div class="detil_top_slide">
+                            <div class="detil_top_slide_bigimg">
+                                <img src="" alt="" class="">
+
+                            </div>
+                            <div id="gray"></div>
+                            <div class="morebigPic">
+                                <img src="" alt="" class="moreImg">
+                            </div>
+                            <div class="detil_top_smallPic">
+                                <ul>
+                                    <li style="border: 3px solid orange">
+                                        <img src="images/zhubao1.jpg" alt=""> </li>
+                                    <li>
+                                        <img src="images/zb22.jpg" alt=""> </li>
+                                    <li>
+                                        <img src="images/zb3.jpg" alt=""> </li>
+                                    <li>
+                                        <img src="images/zb2.jpg" alt=""> </li>
+                                    <li>
+                                        <img src="images/zb4.jpg" alt=""> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="detil_top_info">
+                            <div class="detil_title">
+                                <span class="detil_titlespan"></span>
+                                <div class="desc">
+
+                                </div>
+                            </div>
+                            <div class="detil_price">
+                                <div class="saleBox">
+                                    <span class="salefont">本店价</span>
+                                    <span class="price"></span>
+                                    <span class="originPrice">￥1998.00</span>
+                                </div>
+                                <div class="saleServer">
+                                    <span class="server">服 &nbsp;&nbsp;&nbsp;务</span>
+                                    <span class="jifen">*可使用0积分</span>
+                                </div>
+                            </div>
+                            <div class="goos_color">
+                                <div>
+                                    <span class="color">颜色</span>
+                                </div>
+                                <div class="catt">
+                                    <p class="gold">
+                                        <img src="images/zb4.jpg" alt="">
+                                    </p>
+                                    <p class="silvery">
+                                        <img src="images/zb2.jpg" alt="">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="goos_counts">
+                                <span class="countsFont">数量</span>
+                                <div class="countBox">
+                                    <span class="reduce">-</span>
+                                    <input type="text" value="1" class="countIpt" readonly>
+                                    <span class="increase">+</span>
+                                </div>
+                                <div class="allcount">
+                                    (
+                                    <span>9999件</span> )
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <a class="buy">
+                                    <span>立即购买</span>
+                                </a>
+                                <a class="insert">
+                                    <span>加入购物车</span>
+                                </a>
+                                <div class="collect">
+                                    <span>收藏
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detilcon_info">
+                    <div class="detilcon_info_left">
+                        <div class="tab">
+                            <ul>
+                                <li class="tab_item item_active">
+                                    <a>详情</a>
+                                </li>
+                                <li class="tab_item item2">
+                                    <a>评价</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brandInfo">
+                            <ul>
+                                <li class="brand-item">
+                                    <span class="brand-name">产品品牌</span>
+                                    <span class="brand-value">HKGOLD香港黄金</span>
+                                </li>
+                                <li class="brand-item">
+                                    <span class="brand-name">商品货号</span>
+                                    <span class="brand-value">ECS001261</span>
+                                </li>
+                            </ul>
+                            <div class="brandPic">
+                                <img src="images/xqy1.jpg" alt="">
+                                <img src="images/xqy2.jpg" alt="">
+                                <img src="images/xqy3.jpg" alt="">
+                                <img src="images/xqy4.jpg" alt="">
+                                <img src="images/xqy5.jpg" alt="">
+                                <img src="images/xqy6.jpg" alt="">
+                                <img src="images/xqy=7.jpg" alt="">
+                                <img src="images/xqy8.jpg" alt="">
+                                <img src="images/xqy9.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detilcon_info_right">
+                        <div class="hotsell">
+                            <header class="hotsell-head">
+                                精品推荐
+                            </header>
+                            <div class="hotsell-group">
+                                <ul>
+                                    <li>
+                                        <div class="hotsellimg">
+                                            <img src="images/jptj.jpg" alt="">
+                                        </div>
+                                        <div class="hotsell-content">
+                                            <div class="hotsell-content-tit">
+                                                <span>日本tomoni家用无线电动拖把TCC-4002</span>
+                                            </div>
+                                            <div class="hotsell-content-price">￥399.00</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="hotsellimg">
+                                            <img src="images/jxtj2.jpg" alt="">
+                                        </div>
+                                        <div class="hotsell-content">
+                                            <div class="hotsell-content-tit">
+                                                <span>日本tomoni家用无线电动拖把TCC-4002</span>
+                                            </div>
+                                            <div class="hotsell-content-price">￥399.00</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="hotsellimg">
+                                            <img src="images/jptj.jpg" alt="">
+                                        </div>
+                                        <div class="hotsell-content">
+                                            <div class="hotsell-content-tit">
+                                                <span>日本tomoni家用无线电动拖把TCC-4002</span>
+                                            </div>
+                                            <div class="hotsell-content-price">￥399.00</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div id="contact-con">
+            <div class="contact_item">
+                <h4>客服电话</h4>
+                <p class="telephone">028-65292690</p>
+                <p class="datetime">9:00-18:00</p>
+                <a href="" class="btn">用户反馈</a>
+                <a href="" class="btn">在线客服</a>
+            </div>
+            <div class="contact_item">
+                <h4>趣玩简介</h4>
+                <p class="desc">趣玩网，成立于2008年11月。国内知名创意生活类用品零售平台及专业的新媒体电商运营服务商。</p>
+            </div>
+            <div class="contact_item">
+                <h4>微信扫一扫关注我们</h4>
+                <img src="images/code.jpg" alt="">
+                <p class="codeFont">优惠减不停</p>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="foot-con">
+            <ul class="promise">
+                <li>
+                    <p> 7天无忧退货</p>
+                </li>
+                <li>
+                    <p> 全场免邮费</p>
+                </li>
+                <li>
+                    <p> 趣玩品质保证</p>
+                </li>
+            </ul>
+            <hr>
+            <div class="foot_font">
+                <div class="foot_nav">
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                    <li>免责条款 </li>
+                </div>
+                <p class="footP">© 2008-2021 趣玩 版权所有，并保留所有权利。 高新区孵化园德商国际B座1004 蜀ICP备14003947号-1</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        //----------将上一页点击的页面内容传到详情页----------//
+        $(".detil_titlespan").html(localStorage.getItem("goodsname"))
+        $(".lead_goosname").html(localStorage.getItem("goodsname"))
+        $(".lead_goosname").css({ "color": "#888" })
+        $(".detil_top_slide_bigimg img").attr("src", localStorage.getItem("bigImg"))
+        $(".price").html(localStorage.getItem("price"))
+        $(".morebigPic img").attr("src", localStorage.getItem("bigImg"))
+        $(".detil_top_smallPic li img").each(function (index, item) {
+            item.setAttribute("src", localStorage.getItem("bigImg").replace(".jpg", "") + "_" + index + ".jpg")
+        })
+        // $(".detil_top_smallPic li img")[0].setAttribute("src",)
+        //-------------------------------------------------//
+
+        //------------------------放大镜--------------------------//
+        function bindEvent(list, event, fn) {
+            for (var i = 0; i < list.length; i++) {
+                list[i][event] = fn;
+            }
+        }
+        bindEvent($(".detil_top_smallPic img"), "onclick", function () {
+            $(".detil_top_smallPic li").css({ "border": "none" })
+            $(this).closest("li").css({ "border": "3px solid orange" })
+            $(".detil_top_slide_bigimg img")[0].src = this.src
+            $(".moreImg")[0].src = this.src
+        })
+        $(".detil_top_slide_bigimg")[0].onmouseenter = function () {
+            $("#gray")[0].style.display = "block"
+            $(".morebigPic")[0].style.display = "block"
+        }
+        $(".detil_top_slide_bigimg")[0].onmouseleave = function () {
+            $("#gray")[0].style.display = "none"
+            $(".morebigPic")[0].style.display = "none"
+        }
+        $(".detil_top_slide_bigimg")[0].onmousemove = function (event) {
+            let point = {
+                x: event.offsetX,
+                y: event.offsetY,
+            }
+            let xishu = {
+                x: event.offsetX / $(".detil_top_slide_bigimg img")[0].offsetWidth,
+                y: event.offsetY / $(".detil_top_slide_bigimg img")[0].offsetHeight,
+            }
+
+            if (!(point.x + $("#gray")[0].offsetWidth / 2 >= $(".detil_top_slide_bigimg img")[0].offsetWidth || point.x < $("#gray")[0].offsetWidth / 2)) {
+                $("#gray")[0].style.left = point.x - $("#gray")[0].offsetWidth / 2 + "px"
+                $(".moreImg")[0].style.left = -$(".moreImg")[0].offsetWidth * xishu.x + $("#gray")[0].offsetWidth + 38 + "px"
+            }
+            if (!(point.y + $("#gray")[0].offsetHeight / 2 >= $(".detil_top_slide_bigimg img")[0].offsetHeight || point.y < $("#gray")[0].offsetHeight / 2)) {
+                $("#gray")[0].style.top = point.y - $("#gray")[0].offsetHeight / 2 + "px"
+                $(".moreImg")[0].style.top = -$(".moreImg")[0].offsetHeight * xishu.y + $("#gray")[0].offsetHeight + 38 + "px"
+            }
+        }
+
+        //数量的增减 
+        let count = $(".countIpt").val()
+
+        $(".reduce").click(function () {
+            if ($(".countIpt").val() <= "1") {
+                return
+            }
+            count--
+            $(".countIpt").val(count)
+
+        })
+        $(".increase").click(function () {
+            count++
+            $(".countIpt").val(count)
+        })
+        //--------搜索---------//
+        $(".searchFDJ").click(function () {
+            if ($(".search").val() === "") {
+                alert("请在搜索框输入内容哦~")
+            }
+            else {
+                localStorage.setItem("keyword", $(".search").val())
+                $(".searchFDJ a").attr("href", "searchPage.html")
+            }
+        })
+
+        //----------------点击购物车的js--------------//
+        //先缓存要添加到购物车的内容
+        // $(".insert").click(function(){
+        //     localStorage.setItem("goods_name",$(".detil_titlespan").html())
+        //     console.log(localStorage.getItem("goods_name"))
+        //     localStorage.setItem("goods_price",$(".price").html())
+        //     localStorage.setItem("goods_counts",$(".countIpt").val())
+        //     $(".jiaobiao").html(Number($(".jiaobiao").html())+Number(localStorage.getItem("goods_counts")))
+        // })
+        
+        //根据商品名查找商品id值
+        let http = new XMLHttpRequest
+        http.open("get", `http://192.168.31.110:8080/getgoodsID?goodsname=${$(".detil_titlespan").html()}`)
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+                console.log(http.responseText)
+                data = JSON.parse(http.responseText)
+                console.log(data)
+                let nowID = data[0].id
+
+                //将点击购物车后的内容填写到数据库
+                let price = Number($(".price")[0].innerHTML.replace("￥", ""))
+                $(".insert").click(function () {
+                    $(".jiaobiao").html(Number($(".jiaobiao").html()) + Number($(".countIpt").val()))
+                    let http = new XMLHttpRequest
+                    http.open("get", `http://192.168.31.110:8080/insertShopcart?id=${nowID}&goodsname=${$(".detil_titlespan").html()}&price=${price}&counts=${$(".countIpt").val()}`)
+                    http.send()
+                    http.onreadystatechange = function () {
+                        if (http.readyState === 4) {
+                            if (http.responseText === "error") {
+                                alert("添加失败")
+                            }
+                            else {
+                                alert("添加成功")
+                            }
+                        }
+                    }
+                })
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
