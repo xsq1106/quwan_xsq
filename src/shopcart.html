@@ -19,8 +19,8 @@
     <header>
         <div class="headTop-con">
             <div class="headtop_left">
-                <a href="index.html">首页</a>
-                <a href="login.html">登录</a>
+                <a href="index.html" class="login">首页</a>
+                <a href="login.html" class="register">登录</a>
                 <a href="register.html">注册</a>
             </div>
             <div class="headtop_right">
@@ -166,7 +166,20 @@
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
+    <script src="js/cookie.js"></script>
     <script>
+        //-------是否登录--------//
+        if (cookie.get("name") && cookie.get("pwd")) {
+            // 若页面中有登录的cookie，则改变顶部的状态
+            $(".login").html(cookie.get("name"))
+            $(".register").html("退出登录")
+            $(".login").attr("href", "personal.html")
+            $(".register").attr("href", "index.html")
+            $(".register").click(function () {
+                cookie.del("name")
+            })
+        }
+
         let http = new XMLHttpRequest
         http.open("get", "http://192.168.31.110:8080/getshopcart")
         http.send()

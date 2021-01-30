@@ -33,9 +33,9 @@
 
                     <label for="checkBox">
                         <input type="checkbox" id="checkBox" checked>
-                        <span id="baocun"> 我已看过并接受《
+                        <p id="baocun"> 我已看过并接受《
                             <a href=""> 用户协议</a>》
-                        </span>
+                        </p>
                     </label>
                     <input type="submit" value="同意协议并注册" id="submit">
                 </form>
@@ -120,7 +120,7 @@
                         console.log(http.responseText)
                         if (http.responseText === "success") {
                             alert("注册成功，跳转至登录界面！")
-                            location.href = "http://192.168.31.110/%E8%B6%A3%E7%8E%A9%E7%BD%91/login.html"
+                            location.href = "http://192.168.31.110/%E8%B6%A3%E7%8E%A9/login.html"
                         }
                         else if (http.responseText === "chongfu") {
                             alert("用户名已存在")

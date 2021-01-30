@@ -73,7 +73,21 @@ express.get("/addUser", (req, res) => {
 
 //监听来自前端的get请求
 express.get("/fashiongoods", (req, res) => {
-    sql.query(`select name,price,id from hkgoldgoods`, (error, data) => {
+    sql.query(`select name,price,id from fashiongoods`, (error, data) => {
+        if (error) {
+            console.log(error)
+            res.send("error")
+        }
+        else {
+            res.send(data)
+        }
+    })
+})
+
+//寻找品牌对应的商品
+express.get("/fashiongoodsBrand", (req, res) => {
+    let brands=req.query.brands
+    sql.query(`select * from fashiongoods where brands="${brands}"`, (error, data) => {
         if (error) {
             console.log(error)
             res.send("error")
@@ -88,7 +102,7 @@ express.get("/fashiongoods", (req, res) => {
 express.get("/hasGoods", (req, res) => {
     let keyword = req.query.keyword
     console.log(keyword)
-    sql.query(`select * from hkgoldgoods where keyword1="${keyword}" or keyword2="${keyword}"`, (error, data) => {
+    sql.query(`select * from fashiongoods where keyword1="${keyword}" or keyword2="${keyword}"`, (error, data) => {
         if (error) {
             console.log(error)
             console.log("搜索第一层错误")
@@ -141,7 +155,7 @@ express.get("/getshopcart", (req, res) => {
 express.get("/getgoodsID", (req, res) => {
     let goodsname=req.query.goodsname
     console.log(goodsname)
-    sql.query(`select * from hkgoldgoods where name="${goodsname}"`, (error, data) => {
+    sql.query(`select * from fashiongoods where name="${goodsname}"`, (error, data) => {
         if (error) {
             console.log(error)
             res.send("error")

@@ -154,7 +154,7 @@
                                 <div class="saleBox">
                                     <span class="salefont">本店价</span>
                                     <span class="price"></span>
-                                    <span class="originPrice">￥1998.00</span>
+                                    <span class="originPrice">￥6666.06</span>
                                 </div>
                                 <div class="saleServer">
                                     <span class="server">服 &nbsp;&nbsp;&nbsp;务</span>
@@ -335,9 +335,25 @@
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
+    <script src="js/cookie.js"></script>
+
     <script>
+        //---------缓存登录名-----------//
+        //-------是否登录--------//
+        if (cookie.get("name") && cookie.get("pwd")) {
+            // 若页面中有登录的cookie，则改变顶部的状态
+            $(".login").html(cookie.get("name"))
+            $(".register").html("退出登录")
+            $(".login").attr("href", "personal.html")
+            $(".register").attr("href", "index.html")
+            $(".register").click(function () {
+                cookie.del("name")
+            })
+        }
+
         //----------将上一页点击的页面内容传到详情页----------//
         $(".detil_titlespan").html(localStorage.getItem("goodsname"))
+        console.log($(".detil_titlespan").html())
         $(".lead_goosname").html(localStorage.getItem("goodsname"))
         $(".lead_goosname").css({ "color": "#888" })
         $(".detil_top_slide_bigimg img").attr("src", localStorage.getItem("bigImg"))
@@ -416,15 +432,6 @@
         })
 
         //----------------点击购物车的js--------------//
-        //先缓存要添加到购物车的内容
-        // $(".insert").click(function(){
-        //     localStorage.setItem("goods_name",$(".detil_titlespan").html())
-        //     console.log(localStorage.getItem("goods_name"))
-        //     localStorage.setItem("goods_price",$(".price").html())
-        //     localStorage.setItem("goods_counts",$(".countIpt").val())
-        //     $(".jiaobiao").html(Number($(".jiaobiao").html())+Number(localStorage.getItem("goods_counts")))
-        // })
-        
         //根据商品名查找商品id值
         let http = new XMLHttpRequest
         http.open("get", `http://192.168.31.110:8080/getgoodsID?goodsname=${$(".detil_titlespan").html()}`)

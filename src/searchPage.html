@@ -100,19 +100,20 @@
             <div class="search_body" id="temp">
                 <li class="goos_template" id="tempgoods">
                     <a href="detilPage.html">
-                    <img src="" alt="">
-                    <div class="tempwenzi">
-                        <span class="goods_price">
-                            wew
-                        </span>
-                        <font class="xiaoliang">
-                            <span class="salecount">0</span>人付款 </font>
-                    </div>
+                        <img src="" alt="">
+                        <div class="tempwenzi">
+                            <span class="goods_price">
+                                wew
+                            </span>
+                            <font class="xiaoliang">
+                                <span class="salecount">0</span>人付款 </font>
+                        </div>
 
-                    <span class="goods_name">zgvzdgz</span>
-                    <div class="goods_mask">
-                        <div class="addcart">加入购物车</div>
-                    </div></a>
+                        <span class="goods_name">zgvzdgz</span>
+                        <div class="goods_mask">
+                            <div class="addcart">加入购物车</div>
+                        </div>
+                    </a>
                 </li>
             </div>
             <div class="nosearch">
@@ -173,37 +174,50 @@
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
+    <script src="js/cookie.js"></script>
     <script>
-         //将缓存的keyword值传给关键词内容中
-         $(".keyword").html(localStorage.getItem("keyword"))
-          //判段关键词是否存在商品
-          let http = new XMLHttpRequest
-                http.open("get", `http://192.168.31.110:8080/hasGoods?keyword=${$(".keyword").html()}`)
-                http.send()
-                http.onreadystatechange = function () {
-                    if (http.readyState === 4) {
-                        if (http.responseText === "error") {
-                            console.log(http.responseText)
-                            //没有搜索到内容y
-                            $(".nosearch").css({ "display": "block" })
-                            $(".search_body").attr("id", "temp")
-                        }
-                        else{
-                            $(".nosearch").css({ "display": "none" })
-                            $(".search_body").attr("id", "")
-                            data = JSON.parse(http.responseText)
-                        data.forEach(item => {
-                            let newItem = $("#tempgoods").clone(true).attr("id","")
-                            newItem.find("img").attr("src","images/zhubao"+item.id+".jpg")
-                            $(".search_body").append(newItem)
-                            newItem.find(".goods_name").html(item.name)   
-                            newItem.find(".goods_price").html("￥"+item.price)
-                            // 给新生成的li做标记，便于消除
-                            newItem.addClass("newli")
-                        })
-                        }
-                    }
+        //-------是否登录--------//
+        if (cookie.get("name") && cookie.get("pwd")) {
+            // 若页面中有登录的cookie，则改变顶部的状态
+            $(".login").html(cookie.get("name"))
+            $(".register").html("退出登录")
+            $(".login").attr("href", "personal.html")
+            $(".register").attr("href", "index.html")
+            $(".register").click(function () {
+                cookie.del("name")
+            })
+        }
+
+        //将缓存的keyword值传给关键词内容中
+        $(".keyword").html(localStorage.getItem("keyword"))
+        //判段关键词是否存在商品
+        let http = new XMLHttpRequest
+        http.open("get", `http://192.168.31.110:8080/hasGoods?keyword=${$(".keyword").html()}`)
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState === 4) {
+                if (http.responseText === "error") {
+                    console.log(http.responseText)
+                    //没有搜索到内容y
+                    $(".nosearch").css({ "display": "block" })
+                    $(".search_body").attr("id", "temp")
                 }
+                else {
+                    $(".nosearch").css({ "display": "none" })
+                    $(".search_body").attr("id", "")
+                    data = JSON.parse(http.responseText)
+                    data.forEach(item => {
+                        let newItem = $("#tempgoods").clone(true).attr("id", "")
+                        newItem.find("img").attr("src", "images/zhubao" + item.id + ".jpg")
+                        $(".search_body").append(newItem)
+                        newItem.find(".goods_name").html(item.name)
+                        newItem.find(".goods_price").html("￥" + item.price)
+                        // 给新生成的li做标记，便于消除
+                        newItem.addClass("newli")
+                    })
+                }
+            }
+        }
 
 
 
@@ -231,32 +245,33 @@
                             $(".nosearch").css({ "display": "block" })
                             $(".search_body").attr("id", "temp")
                         }
-                        else{
+                        else {
                             $(".nosearch").css({ "display": "none" })
                             $(".search_body").attr("id", "")
                             data = JSON.parse(http.responseText)
-                        data.forEach(item => {
-                            let newItem = $("#tempgoods").clone(true).attr("id","")
-                            newItem.find("img").attr("src","images/zhubao"+item.id+".jpg")
-                            $(".search_body").append(newItem)
-                            newItem.find(".goods_name").html(item.name)   
-                            newItem.find(".goods_price").html("￥"+item.price)
-                            // 给新生成的li做标记，便于上面消除
-                            newItem.addClass("newli")
-                        })
+                            data.forEach(item => {
+                                let newItem = $("#tempgoods").clone(true).attr("id", "")
+                                newItem.find("img").attr("src", "images/zhubao" + item.id + ".jpg")
+                                $(".search_body").append(newItem)
+                                newItem.find(".goods_name").html(item.name)
+                                newItem.find(".goods_price").html("￥" + item.price)
+                                // 给新生成的li做标记，便于上面消除
+                                newItem.addClass("newli")
+                            })
                         }
                     }
                 }
-            }})
-            $("body").click(function(event){
-            let _this=event.target
-            if(_this.closest(".goos_template")!=null){
-                let nowli=_this.closest(".goos_template")
-                localStorage.setItem("goodsname",$(nowli).find(".goods_name").html())
-                localStorage.setItem("price",$(nowli).find(".goods_price").html())
-                localStorage.setItem("bigImg",$(nowli).find("img").attr("src"))
             }
-            
+        })
+        $("body").click(function (event) {
+            let _this = event.target
+            if (_this.closest(".goos_template") != null) {
+                let nowli = _this.closest(".goos_template")
+                localStorage.setItem("goodsname", $(nowli).find(".goods_name").html())
+                localStorage.setItem("price", $(nowli).find(".goods_price").html())
+                localStorage.setItem("bigImg", $(nowli).find("img").attr("src"))
+            }
+
         })
 
     </script>

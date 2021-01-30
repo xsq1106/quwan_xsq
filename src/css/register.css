@@ -99,10 +99,12 @@ header{
 }
 #baocun{
     font-size: 14px;
+    display: inline-block;
 }
 #baocun a{
     text-decoration: none;
     color: blue;
+    display: inline-block;
 }
 #submit{
     width: 364px;

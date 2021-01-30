@@ -184,18 +184,39 @@ input{
     float: left;
     margin-right: 22px;
 }
+.sortBrands{
+    font-size: 14px;
+    color: #999;
+    float: left;
+    margin-right: 22px;
+}
 .sortGroup{
     overflow: hidden;
     float: left;
     margin-bottom: 4px;
     width: 930px;
 }
-.sortGroup a{
+.sortBrandsGroup{
+    overflow: hidden;
+    float: left;
+    margin-bottom: 4px;
+    width: 930px;
+}
+.sortGroup span{
     float: left;
     margin-right: 30px;
     margin-bottom: 16px;
     font-size: 14px;
-    color: #666666
+    color: #666666;
+    cursor: pointer;
+}
+.sortBrandsGroup span{
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #666666;
+    cursor: pointer;
 }
 .fashion_goods{
     overflow: hidden;
@@ -203,6 +224,21 @@ input{
 .fashion_goods_con{
     padding-top: 30px;
     box-sizing: border-box;
+}
+/* 什么都没有搜到 */
+
+.nosearch{
+    width: 1200px;
+}
+.nosearch_img{
+    text-align: center;
+    padding-top: 30px;
+}
+.nosearch span{
+    text-align: center;
+    font-size: 22px !important;
+    padding-top: 30px;
+    display: block;
 }
 .goodsGroup{
     margin-top: 25px;
